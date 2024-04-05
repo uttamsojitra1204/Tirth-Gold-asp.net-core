@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "ProductCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container mt-5">
+    <h2>My Cart</h2>
+    <div class="row">
+        <div class="col-md-8">
+            <!-- Cart items -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Product Name</h5>
+                    <p class="card-text">Price: $20.00</p>
+                    <p class="card-text">Quantity: 1</p>
+                    <button class="btn btn-danger">Remove</button>
+                </div>
+
+            </div>
+
+
+            <!-- Add more cart items as needed -->
+        </div>
+        <div class="col-md-4">
+            <!-- Cart summary -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Cart Summary</h5>
+                    <p class="card-text">Total Items: 1</p>
+                    <p class="card-text">Total Price: $20.00</p>
+                    <!-- Button to proceed to checkout -->
+                    <a asp-action="DeliveryAddress" asp-controller="Ecommerce" class="btn btn-success">Proceed to Checkout</a>
+                    <!-- Button to continue shopping -->
+                    <a asp-action="HomePage" asp-controller="Ecommerce" class="btn " style="background-color:#B47D2A">Continue Shopping</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

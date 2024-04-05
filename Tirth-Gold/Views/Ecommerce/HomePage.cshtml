@@ -1,0 +1,357 @@
+﻿@model IEnumerable<Product>
+
+@{
+    ViewData["Title"] = "HomePage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" >
+    <div class="carousel-inner py-4">
+        <div class="carousel-item active">
+            <img src="~/images/ad/one.jpg" class="d-block" alt="ad1" style="height:300px; width:1800px;" />
+
+        </div>
+        <div class="carousel-item">
+            <img src="~/images/ad2.png" class="d-block " alt="ad2" style="height:300px; width:1800px;" />
+        </div>
+        <div class="carousel-item">
+            <img src="~/images/ad6.png" class="d-block " alt="ad3" style="height:300px; width:1800px;" />
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<div class="btn-toolbar  px-5  justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
+
+
+    <div class="btn-group me-5 " role="group" aria-label="Third group">
+        <a asp:asp-controller="Ecommerce" asp-action="MenCollection">
+            <button type="button" class="btn btn-lg"  style="background-color:#B47D2A; color:white; height:70px; width:300px; font-size:25px;">Jwellery for Men</button>
+        </a>
+    </div>
+
+        <div class="btn-group" role="group" aria-label="Third group">
+            <a asp:asp-controller="Ecommerce" asp-action="WomenCollection">
+                <button  class="btn btn-lg" style="background-color:#B47D2A; color:white; height:70px; width:300px; font-size:25px; text-align:center;">Jwellery for Women</button>
+            </a>
+        </div>
+
+</div>
+
+<head>
+<meta name="viewport" content="width=device-width" />
+<title>Index</title>
+</head>
+    
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>
+                    @product.Name
+                </td>
+                <td>
+                    @product.Price
+                </td>
+                <td>
+                    <img src="~/Images/@product.Photo" width="60" />
+                </td>
+                <td>
+                    <input type="number" min="1" value="@product.Quantity" id="quantity-@product.Id" />
+                </td>
+                <td align="center">
+                    <button class="add-to-cart" data-product-id="@product.Id">
+                        Add to Cart
+                    </button>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<form asp-controller="Cart" asp-action="Index" method="get">
+    <button type="submit" class="btn btn-primary">Show Cart</button>
+</form>
+@section Scripts {
+    <script src="~/js/Cart.js"></script>
+}
+
+
+
+@*   <div>
+    <div class="container py-4">
+        <div class="row">
+
+
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <a asp-controller="Ecommerce" asp-action="One">
+                        <img src="~/images/home/one.jpg" class="card-img-top" alt="one" style="height:300px; width:287px;">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-text">
+                            Men and women Rope Gold-plated Plated Brass Chain
+                        </h5>
+                        <h5 class="card-title">₹21,999 /-</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <a asp-controller="Ecommerce" asp-action="Two">
+                        <img src="~/images/home/two.jpg" class="card-img-top" alt="two" style="height:300px; width:287px;">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-text">High Quality Indian Polished Gold Plated Brass link Chain Gold Chain  </h5>
+                        <h5 class="card-title">₹31,599 /-</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="~/images/home/three.jpg" class="card-img-top" alt="three" style="height:300px; width:287px;">
+                    <div class="card-body">
+                        <h5 class="card-text">
+                            Silver, Titanium Plated Stainless Steel, Silver, Metal Chain Alloy Chain
+                        </h5>
+                        <h5 class="card-title">₹12,599 /-</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="~/images/home/four.jpg" class="card-img-top" alt="four" style="height:300px; width:287px;">
+                    <div class="card-body">
+                        <h5 class="card-text">
+                            Stylish silver couple bracelet set for women and men
+                            
+                        </h5>
+                        <h5 class="card-title">₹9,990 /-</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-100 my-3"></div>
+
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="~/images/home/five.jpg" class="card-img-top" alt="five" style="height:300px; width:287px;">
+                    <div class="card-body">
+                        <h5 class="card-text">
+                            Adjustable Couple Ring for lovers in silver stylish king Queen design Silver Plated Ring Set
+                        </h5>
+                        <h5 class="card-title">₹50,899 /-</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="~/images/home/six.jpg" class="card-img-top" alt="six" style="height:300px; width:287px;">
+                    <div class="card-body">
+                        <h5 class="card-text">
+                            Black Ring  Pendant Cuboid Stick Locket Necklace Long Chain Black Silver Alloy Pendant
+                            </h5>
+                        <h5 class="card-title">₹10,867 /-</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="~/images/home/seven.jpg" class="card-img-top" alt="seven" style="height:300px; width:287px;">
+                    <div class="card-body">
+                        <h5 class="card-text">
+                            Candere by Kalyan Jewellers Lightweight Earrings Yellow Gold 22kt Dangle Earring
+                        </h5>
+                        <h5 class="card-title">₹19,998 /-</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="~/images/home/eight.jpg" class="card-img-top" alt="eight" style="height:300px; width:287px;">
+                    <div class="card-body">
+                        <h5 class="card-text">
+                            Bridal Silver Plated White Metal Indian Traditional Ethnic Fancy Heavy Alloy Anklet
+                        </h5>
+                        <h5 class="card-title">₹29,899 /-</h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div> *@
+</div> 
+@* 
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+     <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => product.Name)
+                </td>
+                <td>
+                    @(Math.Round(product.Price, 2))
+                </td>
+                <td>
+                    <img src="~/Images/@product.Photo" width="60" />
+                </td>
+                <td>
+                    <input type="number" min="1" value="@product.Quantity" id="quantity-@product.Id" />
+                </td>
+                <td align="center">
+                    <button class="add-to-cart" data-product-id="@product.Id">
+                        Add to Cart
+                    </button>
+                </td>
+
+            </tr>
+        }
+    </tbody> 
+</table>
+<form asp-controller="Cart" asp-action="Index" method="get">
+    <button type="submit" class="btn btn-primary">Show Cart</button>
+</form>
+@section Scripts {
+    <script src="~/js/Cart.js"></script>
+} *@
+
+@* <div >
+    <img src="~/images/k.jpg" class="img-fluid py-4 " alt="ad" style="height:400px; width:1800px;" />
+</div>
+
+<div class="container" style="background-color:#B47D2A; ">
+    <div class="row py-5 justify-content-center " style="padding-left:120px; color:white;">
+        <div class="col ">
+            CAll US
+            <div class="">+91 9510488194</div>
+            <div>+91 6353063639</div>
+        </div>
+
+
+        <div class="col">
+            LOCATION
+            <div>Rajkot, 360020</div>
+        </div>
+
+        <div class="col">
+            HOURS
+            <div class="col">Mon - Fri__11 am - 8 pm</div>
+            <div class="col">Sat- Sun__8 am - 8 pm</div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@*     @model IEnumerable<Tirth_Gold.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var product in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => product.Name)
+            </td>
+            <td>
+                    @(Math.Round(product.Price, 2))
+            </td>
+            <td>
+                <img src="~/Images/@product.Photo" width="60" />
+            </td>
+            <td>
+                <input type="number" min="1" value="@product.Quantity" id="quantity-@product.Id" />
+            </td>
+                <td align="center">
+                    <button class="add-to-cart" data-product-id="@product.Id">
+                        Add to Cart
+                    </button>
+                </td>
+            
+        </tr>
+}
+    </tbody>
+</table>
+<form asp-controller="Cart" asp-action="Index" method="get">
+    <button type="submit" class="btn btn-primary">Show Cart</button>
+</form>
+@section Scripts{
+    <script src="~/js/Cart.js"></script>
+} *@

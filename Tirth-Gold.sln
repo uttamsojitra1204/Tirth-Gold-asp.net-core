@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tirth-Gold", "Tirth-Gold\Tirth-Gold.csproj", "{2CFA7621-3630-4FBA-9989-C28E89D6B2FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2CFA7621-3630-4FBA-9989-C28E89D6B2FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CFA7621-3630-4FBA-9989-C28E89D6B2FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CFA7621-3630-4FBA-9989-C28E89D6B2FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CFA7621-3630-4FBA-9989-C28E89D6B2FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1521005C-756A-4212-8175-D65DED7FF775}
+	EndGlobalSection
+EndGlobal

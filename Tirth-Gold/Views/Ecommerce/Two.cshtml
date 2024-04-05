@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "ProductDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 ">
+            <img src="~/images/home/two.jpg" class="img-fluid ms-5" alt="Product Image" style="width:400px;">
+        </div>
+        <div class="col">
+            <h2>Product Name</h2>
+            <p>Product Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+            <p><strong>Price:</strong> ₹20000.00</p>
+            <p><strong>Category:</strong> Category Name</p>
+            <p><strong>Available:</strong> Yes</p>
+            <a asp-action="ProductCart" asp-controller="Ecommerce">
+                <button type="button" class="btn" style="background-color:#B47D2A;">Add to Cart</button>
+            </a>
+        </div>
+    </div>
+</div>

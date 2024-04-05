@@ -1,0 +1,27 @@
+﻿@model Tirth_Gold.Models.LoginModel;
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section>
+    <div class="container mt-5 pt-5 ">
+        <div class="row ">
+            <div class="col-12 col-sm-8 col-md-6 m-auto">
+                <div class="card border-0 shadow">
+                    <div class="card-body" style="background-color:#F7F2E9; ">
+                        <form method="post">
+                            <input type="text" asp-for="Email" class="form-control my-4 py-2  " placeholder="Email" />
+                            <input type="text" asp-for="Password" class="form-control my-4 py-2" placeholder="Password" />
+                            <input type="text" asp-for="ConfirmPassword" class="form-control my-4 py-2" placeholder="Confirm Password" />
+                            <div class="text-center " style="padding-top:20px; ">
+                                <button type="submit" class="btn" style="background-color:#B47D2A; ">Register</button>
+                                <a href="#" class="nav-link">Already have an account ? Click here</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

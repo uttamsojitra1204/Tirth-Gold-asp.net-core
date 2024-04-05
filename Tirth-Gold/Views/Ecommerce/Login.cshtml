@@ -1,0 +1,27 @@
+﻿@model Tirth_Gold.Models.LoginModel
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section>
+    <div class="container mt-5 pt-5 " method="post">
+        <div class="row ">
+            <div class="col-12 col-sm-8 col-md-6 m-auto">
+                <div class="card border-0 shadow">
+                    <div class="card-body">
+                        <form action="">
+                            <input type="text" asp-for="Email" class="form-control my-4 py-2" placeholder="Email" />
+                            <input type="text" asp-for="Password" name="" id="" class="form-control my-4 py-2" placeholder="Password" />
+                            <div class="text-center mt-3">
+                                <a asp-action="HomePage" asp-controller="Ecommerce" class="btn " style="background-color:#B47D2A;">Login</a>
+                                <a asp-action="Register" asp-controller="Ecommerce" class="btn nav-link">Already have an account ?</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

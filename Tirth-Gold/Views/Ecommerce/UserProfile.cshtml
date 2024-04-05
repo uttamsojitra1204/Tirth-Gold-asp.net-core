@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "UserProfile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <!-- User profile form -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">User Profile</h5>
+                    <form>
+                        <div class="mb-3">
+                            <label for="inputName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="inputName" placeholder="Enter your name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputLocation" class="form-label">Location</label>
+                            <input type="text" class="form-control" id="inputLocation" placeholder="Enter your location">
+                        </div>
+                        <button type="submit" class="btn " style="background-color:#B47D2A;">Save Profile</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <!-- Sidebar with user information -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">User Profile</h5>
+                    <p class="card-text">Name: John Doe</p>
+                    <p class="card-text">Email: john@example.com</p>
+                    <p class="card-text">Location: New York, USA</p>
+                    <a href="#" class="btn" style="background-color:#B47D2A;">Edit Profile</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <!-- Main content area with user settings or other information -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Settings</h5>
+                    <form>
+                        <div class="mb-3">
+                            <label for="inputEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn" style="background-color:#B47D2A;">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
